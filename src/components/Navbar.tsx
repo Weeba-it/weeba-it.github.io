@@ -1,76 +1,95 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import weebaLogo from "@/assets/weeba-logo.jpeg";
+import { Button } from "@/components/ui/button";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/servizi", label: "Servizi" },
-  { href: "/pacchetti", label: "Pacchetti" },
-  { href: "/chi-siamo", label: "Chi Siamo" },
-  { href: "/contatti", label: "Contatti" },
-];
-
-export default function Navbar() {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={weebaLogo} alt="Weeba" className="h-10 w-10 rounded-lg object-cover" />
-            <span className="text-xl font-bold text-foreground">Weeba</span>
-          </Link>
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <img src="/weeba-logo.jpeg" alt="Weeba Logo" className="h-10" />
+          </div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.href
-                    ? "text-primary"
-                    : "text-muted-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => scrollToSection("packages")}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Pacchetti
+            </button>
+            <button
+              onClick={() => scrollToSection("portfolio")}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Portfolio
+            </button>
+            <Button
+              onClick={() => scrollToSection("contact")}
+              className="bg-primary text-primary-foreground hover:bg-secondary"
+            >
+              Contattaci
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden text-foreground"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`block py-2 text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.href
-                    ? "text-primary"
-                    : "text-muted-foreground"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+          <div className="md:hidden mt-4 pb-4 flex flex-col gap-4">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-muted-foreground hover:text-foreground transition-colors text-left"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => scrollToSection("packages")}
+              className="text-muted-foreground hover:text-foreground transition-colors text-left"
+            >
+              Pacchetti
+            </button>
+            <button
+              onClick={() => scrollToSection("portfolio")}
+              className="text-muted-foreground hover:text-foreground transition-colors text-left"
+            >
+              Portfolio
+            </button>
+            <Button
+              onClick={() => scrollToSection("contact")}
+              className="bg-primary text-primary-foreground hover:bg-secondary w-fit"
+            >
+              Contattaci
+            </Button>
           </div>
         )}
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;
