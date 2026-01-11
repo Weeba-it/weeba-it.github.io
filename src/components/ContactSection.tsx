@@ -2,20 +2,20 @@ import { Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     emailjs.sendForm(
-      "service_6ynetfi", // sostituisci con il tuo Service ID da EmailJS
-      "template_xn3mvth", // sostituisci con il tuo Template ID
+      "service_6ynetfi",
+      "template_xn3mvth",
       e.currentTarget,
-      "i1mizveDgcZ7lk3hg" // sostituisci con la tua Public Key EmailJS
+      "i1mizveDgcZ7lk3hg"
     )
     .then(() => {
-      alert("Messaggio inviato! Ti risponderemo al più presto.");
+      alert("Messaggio inviato!");
       e.currentTarget.reset();
     })
     .catch(() => {
@@ -23,6 +23,7 @@ const ContactSection = () => {
     });
   };
 
+  // ✅ return deve essere dentro il componente
   return (
     <section id="contact" className="py-24 bg-primary">
       <div className="container mx-auto px-6">
