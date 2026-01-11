@@ -4,7 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/",
+  base: "/Weeba-it.github.io/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"), // ora @ punta a src
