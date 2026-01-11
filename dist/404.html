@@ -2,15 +2,13 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>404</title>
+  <title>404 - Redirect</title>
   <script>
-    // Salva il path richiesto
-    var path = window.location.pathname;
+    // salva l'URL richiesto
+    const requestedPath = window.location.pathname;
 
-    // Redirect verso index.html passando il path
-    window.location.replace(
-      window.location.origin + "/?redirect=" + path
-    );
+    // manda TUTTO a index.html con query
+    window.location.replace("/?" + requestedPath);
   </script>
 </head>
 <body></body>
