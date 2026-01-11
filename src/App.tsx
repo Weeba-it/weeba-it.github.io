@@ -24,4 +24,13 @@ const App = () => (
   </QueryClientProvider>
 );
 
+const NnFunziona = () => (
+  <div className="h-screen flex items-center justify-center bg-black">
+    <h1 className="text-white text-[10vw] font-black text-center">
+      Nn funziona +
+    </h1>
+  </div>
+);
+
+
 export default App;
