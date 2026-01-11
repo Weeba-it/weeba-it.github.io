@@ -15,8 +15,8 @@ const RouterWrapper = () => {
       const search = window.location.search;
 
       // If there's a query parameter starting with /, it's a redirected route
-      if (search.startsWith('?/?')) {
-        const redirectedPath = search.slice(3).split('&')[0].replace(/~and~/g, '&');
+      if (search.startsWith('?/')) {
+        const redirectedPath = '/' + search.slice(2).split('&')[0].replace(/~and~/g, '&');
         navigate(redirectedPath + window.location.hash, { replace: true });
       }
     };
