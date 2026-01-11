@@ -124,7 +124,7 @@ const SofiaLove = () => {
           </div>
         </div>
       </main>
-      <Footer />
+      
     </div>
   );
 };
