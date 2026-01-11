@@ -5,11 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-/* PAGINA 404 / NN FUNZIONA */
+/* PAGINA 404 */
 const NnFunziona = () => (
   <div className="h-screen flex items-center justify-center bg-black">
     <h1 className="text-white text-[10vw] font-black text-center">
@@ -27,10 +26,10 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-            {/* HOME */}
+            {/* HOME → WEEBA.IT FUNZIONA */}
             <Route path="/" element={<Index />} />
 
-            {/* 404 – QUALSIASI ROTTA NON ESISTENTE */}
+            {/* 404 → SOLO SE LA ROTTA NON ESISTE */}
             <Route path="*" element={<NnFunziona />} />
           </Routes>
         </BrowserRouter>
