@@ -2,8 +2,27 @@ import { Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import emailjs from "emailjs-com";
 
 const ContactSection = () => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_6ynetfi", // sostituisci con il tuo Service ID da EmailJS
+      "template_xn3mvth", // sostituisci con il tuo Template ID
+      e.currentTarget,
+      "i1mizveDgcZ7lk3hg" // sostituisci con la tua Public Key EmailJS
+    )
+    .then(() => {
+      alert("Messaggio inviato! Ti risponderemo al più presto.");
+      e.currentTarget.reset();
+    })
+    .catch(() => {
+      alert("Errore nell'invio del messaggio. Riprova più tardi.");
+    });
+  };
+
   return (
     <section id="contact" className="py-24 bg-primary">
       <div className="container mx-auto px-6">
@@ -44,7 +63,7 @@ const ContactSection = () => {
             <h3 className="text-2xl font-semibold text-foreground mb-6">
               Richiedi un preventivo
             </h3>
-            <form className="space-y-6">
+            <form onSubmit={sendEmail} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium text-muted-foreground mb-2 block">
@@ -52,8 +71,10 @@ const ContactSection = () => {
                   </label>
                   <Input
                     type="text"
+                    name="user_name"
                     placeholder="Il tuo nome"
                     className="bg-card border-border"
+                    required
                   />
                 </div>
                 <div>
@@ -62,8 +83,10 @@ const ContactSection = () => {
                   </label>
                   <Input
                     type="email"
+                    name="user_email"
                     placeholder="La tua email"
                     className="bg-card border-border"
+                    required
                   />
                 </div>
               </div>
@@ -73,6 +96,7 @@ const ContactSection = () => {
                 </label>
                 <Input
                   type="tel"
+                  name="user_phone"
                   placeholder="Il tuo numero"
                   className="bg-card border-border"
                 />
@@ -82,9 +106,11 @@ const ContactSection = () => {
                   Messaggio
                 </label>
                 <Textarea
+                  name="message"
                   placeholder="Descrivi il tuo progetto..."
                   rows={4}
                   className="bg-card border-border resize-none"
+                  required
                 />
               </div>
               <Button
