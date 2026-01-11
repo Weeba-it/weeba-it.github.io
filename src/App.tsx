@@ -31,7 +31,6 @@ const RouterWrapper = () => {
       <Route path="/" element={<Index />} />
       <Route path="/frocio" element={<Gay />} />
       <Route path="/gay" element={<Gay />} />
-      <Route path="/pisellonegro/sofia" element={<SofiaLove />} />
       <Route path="/sofia" element={<Sofia />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
