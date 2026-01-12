@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import weebaLogo from "@/assets/weebaLogoFinal.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <img src="/weeba-logo.jpeg" alt="Weeba Logo" className="h-10" />
+            <img src={weebaLogo} alt="Weeba Logo" className="h-10" />
           </div>
 
           {/* Desktop Menu */}
