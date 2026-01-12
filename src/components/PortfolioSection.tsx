@@ -3,40 +3,48 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const projects = [
   {
-    title: "Ristorante La Terrazza",
-    category: "Ristorazione",
-    description: "Sito web elegante con menu digitale e sistema di prenotazioni online.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=60",
+    title: "Sigma Gooners",
+    category: "Servizi di prostituzione online",
+    description: "Non ho parole per commentarlo",
+    image: "https://sigmagooners.it/fotohot/papino.png",
   },
   {
-    title: "Studio Legale Rossi",
+    title: "Centro scommesse quartiere san paolo",
     category: "Servizi Professionali",
     description: "Portale professionale con area clienti e gestione documenti.",
-    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop&q=60",
+    image: "https://procasino.it/wp-content/uploads/2022/12/888casino-online.jpg",
   },
   {
     title: "FitLife Palestra",
     category: "Fitness & Wellness",
-    description: "Sito dinamico con calendario corsi e iscrizione online.",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop&q=60",
+    description: "Sito dinamico con calendario corsi e  personal trainer online.",
+    image: "https://www.salvatorepumo.it/wp-content/uploads/2023/10/logo-burger-king-oggi.jpg",
   },
   {
-    title: "Boutique Eleganza",
+    title: 'Boutique "Vietato Rubare"',
     category: "E-commerce",
     description: "Negozio online completo con gestione inventario e pagamenti.",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop&q=60",
+    image: "https://www.barinedita.it/public/foto_news_upload/bari%20san%20paolo%20cep%20quartiere.jpg",
   },
-  {
-    title: "Agenzia Immobiliare Casa Nuova",
-    category: "Immobiliare",
-    description: "Piattaforma immobiliare con ricerca avanzata e tour virtuali.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=60",
-  },
-  {
+{
+  title: (
+    <>
+      Agenzia Immobiliare Casa{" "}
+      <span style={{ textDecoration: "line-through" }}>Nuova </span>
+      Nostra
+    </>
+    
+  ),
+  category: "Immobiliare",
+  description: "Piattaforma immobiliare con ricerca avanzata e tour virtuali.",
+  image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=60",
+},
+
+ {
     title: "Clinica Veterinaria Amici",
     category: "Salute",
     description: "Sito con prenotazione appuntamenti e schede pazienti.",
-    image: "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=800&auto=format&fit=crop&q=60",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3nZXvc12Hi1d3X-_bhQ2ZIUhWAxErh7tlUw&s",
   },
 ];
 
