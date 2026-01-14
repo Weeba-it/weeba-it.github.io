@@ -6,6 +6,7 @@ import Gay from "./pages/Gay";
 import Sofia from "./pages/Sofia";
 import SofiaLove from "./pages/SofiaLove";
 
+
 const RouterWrapper = () => {
   const location = useLocation();
   const navigate = useNavigate();

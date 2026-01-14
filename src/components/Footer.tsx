@@ -1,3 +1,5 @@
+
+
 const Footer = () => {
   return (
     <footer className="bg-foreground py-12">
