@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const projects = [
   {
-    title: "Sigma Gooners (Never Goon)",
+    title: "Sigma Gooners",
     category: "Servizi di prostituzione online",
     description: "Non ho parole per commentarlo",
     image: "https://media.tenor.com/0FHhIn30HlEAAAAe/never-goon-bozonga.png",
