@@ -3,10 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const projects = [
   {
-    title: "Sigma Gooners",
+    title: "Sigma Gooners (Never Goon)",
     category: "Servizi di prostituzione online",
     description: "Non ho parole per commentarlo",
-    image: "https://sigmagooners.it/fotohot/papino.png",
+    image: "https://media.tenor.com/0FHhIn30HlEAAAAe/never-goon-bozonga.png",
   },
   {
     title: "Centro scommesse quartiere san paolo",
