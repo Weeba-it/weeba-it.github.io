@@ -70,7 +70,6 @@ const PortfolioSection = () => {
               <div className="relative aspect-video overflow-hidden">
                 <img
                   src={project.image}
-                  alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
