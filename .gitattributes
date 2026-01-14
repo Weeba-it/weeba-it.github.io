@@ -1,0 +1,7 @@
+*.js text=javascript
+*.jsx text=javascript
+*.ts text=typescript
+*.tsx text=typescript
+*.css text=css
+*.json text=json
+

@@ -1,0 +1,12 @@
+# Jekyll Configuration for GitHub Pages
+# Explicitly set MIME types for JavaScript files
+webrick:
+  mime_types:
+    default:
+      js: "application/javascript"
+      mjs: "application/javascript"
+
+# Ensure proper asset handling
+sass:
+  sass_dir: _sass
+
